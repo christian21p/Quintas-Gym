@@ -55,35 +55,6 @@ body {
   color: var(--text-primary);
   line-height: 1.6;
   overflow-x: hidden;
-  position: relative;
-}
-
-/* Capa de textura de grano premium */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  opacity: 0.2;
-  filter: url(#noiseFilter);
-  z-index: -2; /* Más al fondo */
-}
-
-/* Capas de fondo para las pinceladas sutiles - Intensidad reducida */
-body::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  background-image: 
-    radial-gradient(circle at 10% 20%, rgba(242, 101, 34, 0.04) 0%, transparent 40%),
-    radial-gradient(circle at 80% 50%, rgba(242, 101, 34, 0.03) 0%, transparent 50%),
-    radial-gradient(circle at 30% 80%, rgba(242, 101, 34, 0.04) 0%, transparent 40%);
-  z-index: -1; /* Encima de la textura pero debajo del contenido */
 }
 
 img {
@@ -381,8 +352,7 @@ ul, ol {
   justify-content: center;
   overflow: hidden;
   padding: 120px 40px 80px;
-  /* Fondo transparente para permitir que la textura del body se fusione por debajo */
-  background: transparent; 
+  background: var(--bg-primary);
 }
 
 .hero-bg {
@@ -401,12 +371,10 @@ ul, ol {
 .hero-overlay {
   position: absolute;
   inset: 0;
-  /* Gradiente especial para fundir la imagen con la textura del fondo de la página */
   background: linear-gradient(
     180deg,
-    rgba(5, 5, 5, 0) 0%,
-    rgba(5, 5, 5, 0.6) 70%,
-    var(--bg-primary) 100%
+    rgba(5, 5, 5, 0.4) 0%,
+    rgba(5, 5, 5, 0.8) 100%
   );
   z-index: 1;
 }
@@ -990,7 +958,7 @@ ul, ol {
 /* ---- Filosofía Section (Split) ---- */
 .philosophy {
   padding: 0; /* Full width approach */
-  background: transparent; /* Permite ver la textura de pinceladas del body */
+  background: var(--bg-primary);
 }
 
 .philosophy-container {
