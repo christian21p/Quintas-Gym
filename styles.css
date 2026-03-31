@@ -1319,6 +1319,11 @@ ul, ol {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  /* Make the last item span 2 columns if it's the 9th (odd) image, to keep the grid "parejo" */
+  .gallery-item:last-child:nth-child(odd) {
+    grid-column: span 2;
+  }
+
   .footer-container {
     grid-template-columns: 1fr;
     text-align: center;
